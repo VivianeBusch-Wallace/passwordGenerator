@@ -11,11 +11,19 @@
     <h1>Password Generator</h1>
     <section>
       <h2>Generate a password with this app</h2>
+      <p>
+        Every time you click the generate button a new random password is
+        produced.
+      </p>
       <div class="gen-container">
         <form>
-          <input type="text" placeholder="Type in a number" />
+          <input
+            type="text"
+            placeholder="Type in a number"
+            id="num-from-user"
+          />
           <label value="click here">
-            <button onclick="passwordGenerator2()">Generate Password</button>
+            <button id="generate-pw">Generate Password</button>
           </label>
         </form>
         <div class="password-result"></div>

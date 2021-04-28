@@ -84,7 +84,7 @@ const passwordGenerator2 = (numChar2) => {
   return password;
 };
 
-console.log(passwordGenerator2());
+console.log(passwordGenerator2(10));
 
 // Alternative:
 
@@ -142,6 +142,16 @@ const passwordGen = (numChar) => {
   //   console.log(password); //to check password's actual length
   return password.substring(0, numChar); //cuts the password to the first 30 characters
 };
-console.log(passwordGen());
+console.log(passwordGen(10));
 
 // Below is the integration into the html
+let inputNum = document.querySelector("#num-from-user").value;
+
+// show result
+
+//user clicks on generate button
+const genButton = document.querySelector("#generate-pw");
+genButton.addEventListener("click", output);
+// Check if input is a number
+// limit to only 100 digits?
+//
