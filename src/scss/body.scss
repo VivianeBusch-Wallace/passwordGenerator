@@ -10,3 +10,12 @@ form {
   //     border: springgreen 2px solid;
   //   }
 }
+p {
+  border: springgreen 3px solid;
+  span {
+    display: inline-block;
+    height: 1.5rem;
+    min-width: 5rem;
+    border: steelblue 2px solid;
+  }
+}

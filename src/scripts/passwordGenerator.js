@@ -148,6 +148,7 @@ console.log(passwordGen(10));
 let inputNum = document.querySelector("#num-from-user").value;
 
 // show result
+const pwResult = document.querySelector(".password-result");
 
 //user clicks on generate button
 const genButton = document.querySelector("#generate-pw");
