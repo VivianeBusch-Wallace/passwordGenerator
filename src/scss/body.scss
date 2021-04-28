@@ -4,3 +4,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+form {
+  border: 4px yellow solid;
+  label {
+    border: springgreen 2px solid;
+  }
+}

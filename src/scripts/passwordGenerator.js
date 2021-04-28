@@ -143,3 +143,5 @@ const passwordGen = (numChar) => {
   return password.substring(0, numChar); //cuts the password to the first 30 characters
 };
 console.log(passwordGen());
+
+// Below is the integration into the html
