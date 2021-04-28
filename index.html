@@ -4,9 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
     <title>Password Generator</title>
   </head>
   <body>
+    <h1>Password Generator</h1>
+    <section>
+      <h2>Generate a password with this app</h2>
+      <p>
+        Every time you click the generate button a new random password is
+        produced.
+      </p>
+      <div class="gen-container">
+        <div class="generator">
+          <input
+            type="text"
+            placeholder="Type in a number"
+            id="num-from-user"
+          />
+          <label value="click here">
+            <button id="generate-pw">Generate Password</button>
+          </label>
+        </div>
+        <p>This is your password: <span class="password-result"></span></p>
+      </div>
+    </section>
     <!-- My script -->
     <script src="./scripts/passwordGenerator.js"></script>
   </body>
