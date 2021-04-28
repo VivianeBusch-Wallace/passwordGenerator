@@ -1,4 +1,3 @@
-// Checking if this is the file
 console.log("------------Password generator--------------");
 // Create a program that generates a random password with the length of 30 characters, every time you call the function, it should give you a different password.
 // Examples:
