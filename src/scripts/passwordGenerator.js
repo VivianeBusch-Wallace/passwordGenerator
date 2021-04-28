@@ -1,4 +1,3 @@
-// Checking if this is the file
 console.log("------------Password generator--------------");
 // Create a program that generates a random password with the length of 30 characters, every time you call the function, it should give you a different password.
 // Examples:
@@ -6,7 +5,7 @@ console.log("------------Password generator--------------");
 // passwordGen()  ➞ Oy$tkBGoo5fg§mO4AdV&Kh8XXZR4d7K
 // passwordGen()  ➞ v0ZwDrn@hfI€kOKWH§k6kqub6zfpuyP
 
-const passwordGenerator2 = () => {
+const passwordGenerator2 = (numChar2) => {
   let characters = [
     0,
     1,
@@ -79,17 +78,17 @@ const passwordGenerator2 = () => {
     "z",
   ];
   let password = "";
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < numChar2; i++) {
     password += characters[Math.floor(Math.random() * characters.length)];
   }
   return password;
 };
 
-console.log(passwordGenerator2());
+console.log(passwordGenerator2(10));
 
 // Alternative:
 
-const passwordGen = () => {
+const passwordGen = (numChar) => {
   // let numb = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9]; //left out because unnecessary
   let alphaLower = [
     "a",
@@ -141,6 +140,20 @@ const passwordGen = () => {
     }
   }
   //   console.log(password); //to check password's actual length
-  return password.substring(0, 30); //cuts the password to the first 30 characters
+  return password.substring(0, numChar); //cuts the password to the first 30 characters
 };
-console.log(passwordGen());
+console.log(passwordGen(10));
+
+// Below is the integration into the html
+let inputNum = document.querySelector("#num-from-user").value;
+
+// show result
+const pwResult = document.querySelector(".password-result");
+const output = pwResult.textContent;
+passwordGenerator2();
+//user clicks on generate button
+const genButton = document.querySelector("#generate-pw");
+genButton.addEventListener("click", output);
+// Check if input is a number
+// limit to only 100 digits?
+//
