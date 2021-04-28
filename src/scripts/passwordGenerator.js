@@ -149,7 +149,8 @@ let inputNum = document.querySelector("#num-from-user").value;
 
 // show result
 const pwResult = document.querySelector(".password-result");
-
+const output = pwResult.textContent;
+passwordGenerator2();
 //user clicks on generate button
 const genButton = document.querySelector("#generate-pw");
 genButton.addEventListener("click", output);
