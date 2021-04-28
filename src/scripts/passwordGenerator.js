@@ -5,7 +5,8 @@ console.log("------------Password generator--------------");
 // passwordGen()  ➞ Oy$tkBGoo5fg§mO4AdV&Kh8XXZR4d7K
 // passwordGen()  ➞ v0ZwDrn@hfI€kOKWH§k6kqub6zfpuyP
 
-const passwordGenerator2 = (numChar2) => {
+const passwordGenerator2 = () => {
+  let inputNum = document.querySelector("#num-from-user").value;
   let characters = [
     0,
     1,
@@ -78,82 +79,17 @@ const passwordGenerator2 = (numChar2) => {
     "z",
   ];
   let password = "";
-  for (let i = 0; i < numChar2; i++) {
+  for (let i = 0; i < inputNum; i++) {
     password += characters[Math.floor(Math.random() * characters.length)];
   }
-  return password;
+  let result = document.querySelector(".password-result");
+
+  return (result.innerHTML = password);
 };
 
-console.log(passwordGenerator2(10));
-
-// Alternative:
-
-const passwordGen = (numChar) => {
-  // let numb = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9]; //left out because unnecessary
-  let alphaLower = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
-  let specialCharacters = ["!", "§", "$", "%", "&", "?", "@", "€"];
-  let password = "";
-
-  for (let i = 0; i < 30; i++) {
-    let spChr =
-      specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-    let alpha = alphaLower[Math.floor(Math.random() * alphaLower.length)];
-    let alphaUpper = alpha.toUpperCase();
-    let randomNumber = Math.floor(Math.random() * 100) + 1; //outputs a random number between 1 and 100 (inclusive)
-
-    if (randomNumber % 2 == 0) {
-      password += alpha; //a random lower case letter
-    }
-    if (randomNumber % 3 == 0) {
-      password += Math.floor(Math.random() * 100); //double random - wohoo! :) - outputs a number between 0 and 99 (inclusive)
-    }
-    if (randomNumber % 5 == 0) {
-      password += alphaUpper; //a random upper case letter
-    } else {
-      password += spChr; //a random special character
-    }
-  }
-  //   console.log(password); //to check password's actual length
-  return password.substring(0, numChar); //cuts the password to the first 30 characters
-};
-console.log(passwordGen(10));
-
-// Below is the integration into the html
-let inputNum = document.querySelector("#num-from-user").value;
-
-// show result
-const pwResult = document.querySelector(".password-result");
-const output = pwResult.textContent;
-passwordGenerator2();
 //user clicks on generate button
 const genButton = document.querySelector("#generate-pw");
-genButton.addEventListener("click", output);
+genButton.addEventListener("click", passwordGenerator2);
 // Check if input is a number
 // limit to only 100 digits?
-//
+// Note: cannot assign method to a variable
