@@ -5,7 +5,7 @@ console.log("------------Password generator--------------");
 // passwordGen()  ➞ Oy$tkBGoo5fg§mO4AdV&Kh8XXZR4d7K
 // passwordGen()  ➞ v0ZwDrn@hfI€kOKWH§k6kqub6zfpuyP
 
-const passwordGenerator2 = () => {
+const passwordGenerator2 = (numChar2) => {
   let characters = [
     0,
     1,
@@ -78,7 +78,7 @@ const passwordGenerator2 = () => {
     "z",
   ];
   let password = "";
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < numChar2; i++) {
     password += characters[Math.floor(Math.random() * characters.length)];
   }
   return password;
@@ -88,7 +88,7 @@ console.log(passwordGenerator2());
 
 // Alternative:
 
-const passwordGen = () => {
+const passwordGen = (numChar) => {
   // let numb = [0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9]; //left out because unnecessary
   let alphaLower = [
     "a",
@@ -140,6 +140,6 @@ const passwordGen = () => {
     }
   }
   //   console.log(password); //to check password's actual length
-  return password.substring(0, 30); //cuts the password to the first 30 characters
+  return password.substring(0, numChar); //cuts the password to the first 30 characters
 };
 console.log(passwordGen());
